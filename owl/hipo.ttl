@@ -3,6 +3,7 @@
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/dcat
 # imports: http://xmlns.com/foaf/0.1/
+# prefix: hipo
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -13,8 +14,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-## The HIP ontology ## 
 
 <https://codata.org/ont/hip>
   a owl:Ontology ;
@@ -30,11 +29,12 @@
 hipo:Cluster
   a owl:Class ;
   rdfs:label "Hazard cluster" ;
-  rdfs:subClassOf skos:Collection ;
+  rdfs:subClassOf skos:Concept ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom hipo:HIP ;
-      owl:onProperty skos:member ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass hipo:HIP ;
+      owl:onProperty skos:narrower ;
     ] ;
 .
 hipo:HIP
@@ -70,6 +70,12 @@ hipo:HIP
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty hipo:coordinator ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass hipo:Cluster ;
+      owl:onProperty skos:broader ;
     ] ;
 .
 hipo:Provenance
@@ -109,7 +115,7 @@ hipo:Type
   rdfs:subClassOf skos:Collection ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom hipo:Cluster ;
+      owl:allValuesFrom hipo:HIP ;
       owl:onProperty skos:member ;
     ] ;
 .
