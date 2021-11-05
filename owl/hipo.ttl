@@ -150,9 +150,3 @@ hipo:metrics
   rdfs:label "Metrics and numeric limits" ;
   rdfs:subPropertyOf skos:note ;
 .
-hipo:references
-  a owl:AnnotationProperty ;
-  rdfs:domain skos:Concept ;
-  rdfs:label "References" ;
-  rdfs:subPropertyOf rdfs:seeAlso ;
-.
