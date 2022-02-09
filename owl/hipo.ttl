@@ -20,7 +20,7 @@
   dcterms:created "2020-09-13"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:description "OWL ontology for encoding of Hazard Information Profiles developed by ISC/UNDRR Working Group on Hazard Terminology - a profile of SKOS" ;
-  dcterms:modified "2020-09-13"^^xsd:date ;
+  dcterms:modified "2022-02-09"^^xsd:date ;
   owl:imports dcterms: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <http://www.w3.org/ns/dcat> ;
@@ -150,11 +150,6 @@ hipo:metrics
   rdfs:label "Metrics and numeric limits" ;
   rdfs:subPropertyOf skos:note ;
 .
-hipo:references
-  a owl:AnnotationProperty ;
-  rdfs:domain skos:Concept ;
-  rdfs:label "References" ;
-  rdfs:subPropertyOf rdfs:seeAlso ;
 hipo:type
   a owl:ObjectProperty ;
   rdfs:label "HIP Type" ;
