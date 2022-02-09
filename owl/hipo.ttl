@@ -155,4 +155,11 @@ hipo:references
   rdfs:domain skos:Concept ;
   rdfs:label "References" ;
   rdfs:subPropertyOf rdfs:seeAlso ;
+hipo:type
+  a owl:ObjectProperty ;
+  rdfs:label "HIP Type" ;
+  rdfs:subPropertyOf dcterms:type ;
+  rdfs:subPropertyOf [
+      owl:inverseOf skos:member ;
+    ] ;
 .
