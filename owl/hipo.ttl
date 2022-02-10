@@ -144,17 +144,26 @@ hipo:drivers-outcomes-risk-management
   rdfs:label "Examples of drivers, outcomes and risk management" ;
   rdfs:subPropertyOf skos:note ;
 .
+hipo:inCluster
+  a owl:ObjectProperty ;
+  rdfs:domain hipo:HIP ;
+  rdfs:label "HIP Cluster" ;
+  rdfs:range hipo:Cluster ;
+  rdfs:subPropertyOf skos:broader ;
+.
+hipo:inType
+  a owl:ObjectProperty ;
+  rdfs:domain hipo:HIP ;
+  rdfs:label "HIP Type" ;
+  rdfs:range hipo:Type ;
+  rdfs:subPropertyOf dcterms:type ;
+  rdfs:subPropertyOf [
+      owl:inverseOf skos:member ;
+    ] ;
+.
 hipo:metrics
   a owl:AnnotationProperty ;
   rdfs:domain hipo:HIP ;
   rdfs:label "Metrics and numeric limits" ;
   rdfs:subPropertyOf skos:note ;
-.
-hipo:type
-  a owl:ObjectProperty ;
-  rdfs:label "HIP Type" ;
-  rdfs:subPropertyOf dcterms:type ;
-  rdfs:subPropertyOf [
-      owl:inverseOf skos:member ;
-    ] ;
 .
